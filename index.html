@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vellxy Mod</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="brand">Vellxy<span>.Mod</span></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Vellxy Mod.</h1>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#pricing">Unlock — $15</a>
+    </div>
+  </div>
+</header>
+
+<section id="pricing" class="pricing">
+  <div class="price-card">
+    <div class="price">$15</div>
+    <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="PAYPAL_BUSINESS_EMAIL">
+      <input type="hidden" name="item_name" value="Vellxy Mod">
+      <input type="hidden" name="amount" value="15.00">
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="hidden" name="return" value="">
+      <button type="submit" class="btn btn-buy" id="pay-btn">Pay $15 with PayPal</button>
+    </form>
+    <div id="download-box" class="download-box hidden">
+      <hr>
+      <a class="btn btn-primary" id="dl-link" href="downloads/Vellxy Mod.jar">⬇ Download</a>
+      <p class="fine-print">Key: <code id="install-key"></code></p>
+    </div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
