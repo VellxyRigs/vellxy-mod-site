@@ -138,3 +138,33 @@ section { position: relative; z-index: 1; padding: 20px 5vw 70px; max-width: 108
 .download-box { margin-top: 20px; }
 .download-box hr { border: 0; border-top: 1px solid var(--line); margin: 22px 0; }
 .hidden { display: none; }
+
+/* crypto panel */
+.crypto-card { max-width: 460px; }
+.coin-tabs {
+    display: flex; gap: 8px; justify-content: center; margin: 20px 0 22px;
+}
+.coin-tab {
+    padding: 8px 22px; border-radius: 999px; cursor: pointer;
+    background: rgba(120, 150, 255, 0.08); border: 1px solid var(--line);
+    color: var(--muted); font-weight: 800; font-size: 15px; transition: all 0.12s ease;
+}
+.coin-tab:hover { color: var(--text); }
+.coin-tab.active {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: #fff; border-color: transparent;
+}
+.coin-panel { display: none; }
+.coin-panel.active { display: block; }
+.qr {
+    width: 180px; height: 180px; border-radius: 12px;
+    border: 1px solid var(--line); background: #151d2e;
+}
+.coin-addr {
+    display: block; width: 90%; margin: 14px auto 6px;
+    padding: 10px; border-radius: 10px;
+    background: rgba(10, 13, 22, 0.6); border: 1px dashed var(--line);
+    font-family: Consolas, monospace; font-size: 12px; word-break: break-all; color: var(--text);
+}
+#verify-btn { margin-top: 20px; width: 100%; }
+#verify-status { margin-top: 16px; min-height: 20px; }

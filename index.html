@@ -35,6 +35,31 @@
   </div>
 </section>
 
+<section id="crypto" class="pricing">
+  <div class="price-card crypto-card">
+    <div class="price" style="font-size:34px">Or pay with crypto</div>
+
+    <div class="coin-tabs">
+      <button class="coin-tab active" data-coin="SOL" id="tab-SOL">SOL</button>
+      <button class="coin-tab" data-coin="LTC" id="tab-LTC">LTC</button>
+    </div>
+
+    <div id="coin-SOL" class="coin-panel active">
+      <img id="qr-SOL" class="qr" alt="SOL address">
+      <p class="coin-addr" id="addr-SOL"></p>
+      <p class="fine-print" id="amount-SOL">≈ loading price…</p>
+    </div>
+    <div id="coin-LTC" class="coin-panel">
+      <img id="qr-LTC" class="qr" alt="LTC address">
+      <p class="coin-addr" id="addr-LTC"></p>
+      <p class="fine-print" id="amount-LTC">≈ loading price…</p>
+    </div>
+
+    <button class="btn btn-primary" id="verify-btn">Check payment</button>
+    <div id="verify-status" class="fine-print">Send crypto to the address above, then press Check payment — it reads the live blockchain to confirm.</div>
+  </div>
+</section>
+
 <script src="https://www.paypal.com/sdk/js?client-id=BAAd3IzWxJeZRtZ4uLfxa_ttZWPJZ7zdxNgAq7zatgZxQ6v90D4cyPMbA9vgSr75caWw10dZADwi5bMCko&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
 <script>
   function unlockDownload() {
