@@ -14,6 +14,7 @@
 <header class="hero">
   <div class="hero-inner">
     <h1>Vellxy Mod.</h1>
+    <p class="tagline">Best Force Pull | Skelly Mod | Balance Mod | Arrow Control Mod</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#pricing">Unlock — $15</a>
     </div>
@@ -23,22 +24,35 @@
 <section id="pricing" class="pricing">
   <div class="price-card">
     <div class="price">$15</div>
-    <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="business" value="PAYPAL_BUSINESS_EMAIL">
-      <input type="hidden" name="item_name" value="Vellxy Mod">
-      <input type="hidden" name="amount" value="15.00">
-      <input type="hidden" name="currency_code" value="USD">
-      <input type="hidden" name="return" value="">
-      <button type="submit" class="btn btn-buy" id="pay-btn">Pay $15 with PayPal</button>
-    </form>
+    <div id="paypal-container-4KJBNY74UNLZQ"></div>
+
     <div id="download-box" class="download-box hidden">
       <hr>
       <a class="btn btn-primary" id="dl-link" href="downloads/Vellxy Mod.jar">⬇ Download</a>
       <p class="fine-print">Key: <code id="install-key"></code></p>
     </div>
+    <p class="fine-print"><a id="reveal-link" href="#" onclick="return false;">Already paid? Show download</a></p>
   </div>
 </section>
+
+<script src="https://www.paypal.com/sdk/js?client-id=BAAd3IzWxJeZRtZ4uLfxa_ttZWPJZ7zdxNgAq7zatgZxQ6v90D4cyPMbA9vgSr75caWw10dZADwi5bMCko&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+<script>
+  function unlockDownload() {
+    var box = document.getElementById("download-box");
+    if (box) box.classList.remove("hidden");
+    var reveal = document.getElementById("reveal-link");
+    if (reveal) reveal.style.display = "none";
+  }
+  paypal.HostedButtons({
+    hostedButtonId: "4KJBNY74UNLZQ",
+    onSuccess: function (data) {
+      unlockDownload();
+    },
+    onError: function (err) {
+      console.error(err);
+    }
+  }).render("#paypal-container-4KJBNY74UNLZQ")
+</script>
 
 <script src="app.js"></script>
 </body>
