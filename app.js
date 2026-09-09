@@ -47,7 +47,7 @@
     var unlocked = false;
     var quietCount = 0;
 
-    $id("verify-btn").addEventListener("click", function () {
+    $id("verify-btn") && $id("verify-btn").addEventListener("click", function () {
         var activeCoin = document.querySelector(".coin-tab.active").dataset.coin;
         setStatus("Checking blockchain for " + activeCoin + "…");
         if (activeCoin === "SOL") checkSol(false); else checkLtc(false);
@@ -128,14 +128,7 @@
     function unlockDownload() {
         var box = $id("download-box");
         if (box) box.classList.remove("hidden");
-        var reveal = $id("reveal-link");
-        if (reveal) reveal.style.display = "none";
     }
-
-    $id("reveal-link") && $id("reveal-link").addEventListener("click", function (e) {
-        e.preventDefault();
-        unlockDownload();
-    });
 
     var paid = new URLSearchParams(window.location.search).get("paid");
     if (paid === "1") {
